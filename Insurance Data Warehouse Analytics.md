@@ -78,7 +78,7 @@ Insight: Consultation & Medication rejections suggest stricter review processes 
 
 ⸻
 
-3️⃣ Top 10 Policyholders by Approved Claims
+ 3️⃣ Top 10 Policyholders by Approved Claims
 
 SELECT 
     policyholder_id,
