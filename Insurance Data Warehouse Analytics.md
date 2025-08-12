@@ -21,7 +21,7 @@ Data model (tables used)
 
 Queries, explanations & results
 
-1️⃣ Highest Average Claim Amount by Policy Type
+ 1 Highest Average Claim Amount by Policy Type
 
 SQL
 
