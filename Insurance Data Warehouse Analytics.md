@@ -36,7 +36,7 @@ claims
 
 ⸻
 
-1️⃣ Highest Average Claim Amount by Policy Type
+# 1️⃣ Highest Average Claim Amount by Policy Type
 
 SELECT policy_type,
        ROUND(AVG(claim_amount), 2) AS avg_claimamt
@@ -56,7 +56,7 @@ Insight: Group policies have the highest average claims — possible higher risk
 
 ⸻
 
-2️⃣ Rejected Claims in the Last 12 Months
+# 2️⃣ Rejected Claims in the Last 12 Months
 
 SELECT 
     claim_type,
