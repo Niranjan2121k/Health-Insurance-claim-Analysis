@@ -14,18 +14,12 @@ SET SESSION sql_mode = (
 
 Why: switch to the dataset and remove ONLY_FULL_GROUP_BY for the session so older/looser GROUP BY queries run without strict mode errors.
 
-⸻
-
 Data model (tables used)
 	•	policyholders(policyholder_id, full_name, gender, date_of_birth, address, phone_number, email)
 	•	policies(policy_id, policyholder_id, policy_type, start_date, end_date, premium_amount, coverage_amount, status)
 	•	claims(claim_id, policy_id, claim_date, claim_type, claim_amount, approved_amount, claim_status)
 
-⸻
-
 Queries, explanations & results
-
-⸻
 
 1️⃣ Highest Average Claim Amount by Policy Type
 
@@ -52,9 +46,6 @@ Text bar (scaled):
 Group      ████████████████████████  5459.74
 Individual ██████████████████████    5221.90
 Family     █████████████████████     5166.55
-
-
-⸻
 
 2️⃣ Rejected Claims in the Last 12 Months — Common Types
 
@@ -89,8 +80,6 @@ Hospitalization ████████████████████    
 
 Insight: Consultation & Medication have the highest rejection counts — review documentation rules or common rejection reasons.
 
-⸻
-
 3️⃣ Top 10 Policyholders with Highest Total Approved Claims
 
 SQL
@@ -123,8 +112,6 @@ Ryan Aguirre      ███████░░░░░░░░░░░░░�
 Madison Nunez     ██████░░░░░░░░░░░░░░░░░░  19872.73
 
 Insight: These policyholders are high cost — worth reviewing for care management, fraud detection, or special retention strategies.
-
-⸻
 
 4️⃣ Distribution of Policyholders by Age Group & Gender
 
@@ -177,8 +164,6 @@ Text (clustered) bar chart (scaled to max = 33):
 
 Insight: Strong representation in older age groups (60+), with slightly more females 60+.
 
-⸻
-
 5️⃣ Count of Active Policies with No Claims in the Last Year
 
 SQL
@@ -198,8 +183,6 @@ Result (provided):
 count = 76
 
 Interpretation: 76 active policies had no claims in the past 12 months — potential indicator of low utilization or healthy customers.
-
-⸻
 
 6️⃣ Claim Approval Rate (%) per Claim Type
 
@@ -230,8 +213,6 @@ Surgery         ██████████████████      30.7
 Medication      ████████████████████    34.78%
 
 Insight: Consultation has the highest approval rate in this dataset sample.
-
-⸻
 
 7️⃣ Policy Status Analysis — % Expired, % Cancelled, & Avg Premium
 
@@ -266,8 +247,6 @@ Individual
 
 Insight: Group shows higher cancelled % (35.43) vs expired; average premium is similar across types (~2.9k–3.0k).
 
-⸻
-
 8️⃣ Average Days from Policy Start to First Claim
 
 SQL
@@ -287,8 +266,6 @@ Result (provided):
 avg_days_to_first_claim = 141.57 days  (≈ 4.65 months)
 
 Insight: On average, first claim occurs ~141.6 days after policy start.
-
-⸻
 
 9️⃣ Premium-to-Claim Payout Ratio per Policy Type
 
@@ -311,8 +288,6 @@ Result: NOT PROVIDED in this session.
 
 I do not have your DB access here to run the query and produce numeric ratios.
 How you can get it: run the SQL above in your MySQL client and paste the output here — I’ll format the table and add a bar chart.
-
-⸻
 
 🔟 Policyholders with Multiple Policies — total premium & claim amount
 
@@ -341,15 +316,6 @@ Wrap-up — Key takeaways
 	•	Average time to first claim ≈ 141.57 days.
 	•	Policy status blends (Expired vs Cancelled) differ by policy type; Group has higher cancelled %.
 	•	Two queries (premium-to-claim ratio & the list of policyholders with multiple policies) need running on your DB — I can format results if you paste them here.
-
-⸻
-
-
-
-
-
-
-
 
 
 
