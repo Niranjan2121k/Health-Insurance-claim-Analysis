@@ -2,7 +2,6 @@
 
 ## 📂 Database Setup
 
-```sql
 USE datawarehouseanalytics;
 
 SET SESSION sql_mode = (
@@ -78,7 +77,7 @@ Insight: Consultation & Medication rejections suggest stricter review processes 
 
 ⸻
 
- 3️⃣ Top 10 Policyholders by Approved Claims
+# 3️⃣ Top 10 Policyholders by Approved Claims
 
 SELECT 
     policyholder_id,
@@ -99,7 +98,7 @@ Top 3 Results:
 
 ⸻
 
-4️⃣ Distribution of Policyholders by Age Group & Gender
+# 4️⃣ Distribution of Policyholders by Age Group & Gender
 
 SELECT 
     gender,
@@ -126,7 +125,7 @@ Example Result (Text Bar Chart):
 
 ⸻
 
-5️⃣ Active Policies with No Claims in the Last Year
+# 5️⃣ Active Policies with No Claims in the Last Year
 
 SELECT COUNT(*) 
 FROM (SELECT * FROM policies WHERE status = 'Active') po 
@@ -142,7 +141,7 @@ Result: 76 policies.
 
 ⸻
 
-6️⃣ Claim Approval Rate (%) per Claim Type
+# 6️⃣ Claim Approval Rate (%) per Claim Type
 
 SELECT 
     claim_type,
@@ -162,7 +161,7 @@ Medication	34.78
 
 ⸻
 
-7️⃣ Policy Status Analysis
+# 7️⃣ Policy Status Analysis
 
 SELECT 
     policy_type,
@@ -175,7 +174,7 @@ GROUP BY 1;
 
 ⸻
 
-8️⃣ Average Days from Policy Start to First Claim
+# 8️⃣ Average Days from Policy Start to First Claim
 
 WITH cte AS (
     SELECT policy_id, MIN(claim_date) AS first_claim
@@ -190,7 +189,7 @@ Result: 141.57 days (~4.65 months).
 
 ⸻
 
-9️⃣ Policyholders with Multiple Policies
+# 9️⃣ Policyholders with Multiple Policies
 
 SELECT 
     full_name,
@@ -204,10 +203,10 @@ GROUP BY 1
 HAVING COUNT(DISTINCT policy_id) > 1
 ORDER BY 1;
 
-## 🔟 Average Premium and Claim Payout Ratio per Policy Type
+⸻
 
-**Query:**
-```sql
+# 🔟 Average Premium and Claim Payout Ratio per Policy Type
+
 SELECT 
     policy_type,
     ROUND(avg_prem / avg_claim, 2) AS ratio
@@ -223,12 +222,12 @@ FROM
         policy_type
     ) a;
 
-
-Insight: Identifies loyal or high-value customers who may deserve retention benefits.
-
 ⸻
 
-📌 Key Takeaways
+## Insight: Identifies loyal or high-value customers who may deserve retention benefits.
+
+⸻
+## Key Takeaways
 	•	Group policies show the highest average claim amounts.
 	•	Consultation & Medication claims face higher rejection rates.
 	•	A significant number (76) of active policies had no claims in the past year.
