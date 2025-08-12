@@ -35,7 +35,7 @@ claims
 
 ⸻
 
-# 1️⃣ Highest Average Claim Amount by Policy Type
+1️⃣ Highest Average Claim Amount by Policy Type
 
 SELECT policy_type,
        ROUND(AVG(claim_amount), 2) AS avg_claimamt
