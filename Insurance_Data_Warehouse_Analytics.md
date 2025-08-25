@@ -301,8 +301,6 @@ FROM (
 ) a;
 ```
 
-*Note: This query requires database access to execute and return results.*
-
 ---
 
 ### 10. Policyholders with Multiple Policies
@@ -322,8 +320,6 @@ HAVING COUNT(DISTINCT policy_id) > 1
 ORDER BY total_premium DESC;
 ```
 
-*Note: This query requires database access to execute and return results.*
-
 ## Key Takeaways
 
 1. **Product Performance**: Group policies generate the highest average claims ($5,459.74) but also show the highest cancellation rates (35.43%)
@@ -342,5 +338,3 @@ ORDER BY total_premium DESC;
 5. **Wellness Programs**: Engage the low-utilization segment with preventive care programs to maintain their health and retention
 
 ---
-
-*This portfolio demonstrates SQL analytical capabilities applied to insurance data, providing actionable insights for product management, claims processing, and customer segmentation.*
